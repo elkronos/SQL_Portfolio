@@ -1,0 +1,9 @@
+WITH RECURSIVE DateSeries AS (
+    SELECT CAST('2022-01-01' AS DATE) AS Date
+    UNION ALL
+    SELECT Date + INTERVAL 1 DAY
+    FROM DateSeries
+    WHERE Date < '2022-01-31'
+)
+SELECT *
+FROM DateSeries;

@@ -1,0 +1,8 @@
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT NOT NULL,
+    OrderDate DATETIME NOT NULL,
+    TotalAmount DECIMAL(10, 2) NOT NULL CHECK (TotalAmount >= 0),
+    Status VARCHAR(50) NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
