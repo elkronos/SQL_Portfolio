@@ -27,6 +27,8 @@ Scripts which illustrate the set-up, use, and maintence for a fake (mock) databa
 - `Create Database` - Scripts used to construct a mock database (see schema for database below).
 - `ETL` - How to stage, create, ad insert a product sales table for reproducible reporting.
 - `Feature Engineering` - How to econde, normalize, and extract features from tables for establishing pipelines.
+- `Roles` - Create and manage role and user role information.
+- `Security` - Scripts designed with security in mind. Illustrates encryption, validation, authentication, etc.
 - `Triggers` - Demonstrating how to automatically update tables based on event occurences. Includes scripts such as audit logging, email change notifications, stock management, etc.
 
 
