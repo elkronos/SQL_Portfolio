@@ -21,3 +21,49 @@ Scripts which illustrate how to clean data using SQL.
 
 ## Mock Database
 Scripts which illustrate how to create a mock orgnizational data base with tables for customers, sales, orders, and order details. Also includes scripts showcasing how to analyze these tables as well as scripts which demonstrate a simple extract, transform, and load (ETL) process for the mock database.
+
+### Users Table
+- `UserID` (Primary Key, Auto Increment)
+- `Username` (Varchar(50), Not Null)
+- `Email` (Varchar(100), Not Null, Unique)
+- `PasswordHash` (Varchar(255), Not Null)
+- `DateJoined` (Datetime, Not Null)
+- `LastLogin` (Datetime)
+
+**Relationships**:
+- Has multiple `Orders` via `UserID`.
+
+
+### OrderDetails Table
+- `OrderDetailID` (Primary Key, Auto Increment)
+- `OrderID` (Foreign Key referencing `Orders.OrderID`)
+- `ProductID` (Foreign Key referencing `Products.ProductID`)
+- `Quantity` (Integer, Not Null, Check Constraint: Quantity > 0)
+- `PriceAtTimeOfOrder` (Decimal(10, 2), Not Null)
+
+**Relationships**:
+- Belongs to an `Order` via `OrderID`.
+- References a `Product` via `ProductID`.
+
+
+### Orders Table
+- `OrderID` (Primary Key, Auto Increment)
+- `UserID` (Foreign Key referencing `Users.UserID`)
+- `OrderDate` (Datetime, Not Null)
+- `TotalAmount` (Decimal(10, 2), Not Null, Check Constraint: TotalAmount >= 0)
+- `Status` (Varchar(50), Not Null)
+
+**Relationships**:
+- Belongs to a `User` via `UserID`.
+- Contains multiple `OrderDetails` via `OrderID`.
+
+
+### Products Table
+- `ProductID` (Primary Key, Auto Increment)
+- `ProductName` (Varchar(100), Not Null)
+- `Description` (Text)
+- `Price` (Decimal(10, 2), Not Null, Check Constraint: Price >= 0)
+- `Stock` (Integer, Not Null, Check Constraint: Stock >= 0)
+- `DateAdded` (Datetime, Not Null)
+
+**Relationships**: Can be related to `OrderDetails` as needed.
