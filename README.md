@@ -20,7 +20,17 @@ Scripts which illustrate how to clean data using SQL.
 - `UpdateValues` - Replaces a user specified value with a different user specified value.
 
 ## Mock Database
-Scripts which illustrate how to create a mock orgnizational data base with tables for customers, sales, orders, and order details. Also includes scripts showcasing how to analyze these tables as well as scripts which demonstrate a simple extract, transform, and load (ETL) process for the mock database.
+Scripts which illustrate the set-up, use, and maintence for a fake (mock) database. These scripts are organized into the following directories.
+
+- `Analyze Database` - Scripts that demonstrate how to analyze the mock database. Calculate outcomes such as sales trends over time, sales proportion by product category, average purchase per user, and more.
+- `CTEs` - Common table expresion scripts; Illustrating how to delete, join, query recent orders, recursive joining, updating, analyzing records, and more.
+- `Create Database` - Scripts used to construct a mock database (see schema for database below).
+- `ETL` - How to stage, create, ad insert a product sales table for reproducible reporting.
+- `Feature Engineering` - How to econde, normalize, and extract features from tables for establishing pipelines.
+- `Triggers` - Demonstrating how to automatically update tables based on event occurences. Includes scripts such as audit logging, email change notifications, stock management, etc.
+
+
+A schema of the mock database is listed below.
 
 ### Users Table
 - `UserID` (Primary Key, Auto Increment)
