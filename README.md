@@ -67,3 +67,15 @@ Scripts which illustrate how to create a mock orgnizational data base with table
 - `DateAdded` (Datetime, Not Null)
 
 **Relationships**: Can be related to `OrderDetails` as needed.
+
++---------------------+     +-----------------------+     +-------------------+     +--------------------+
+|      Users          |     |    OrderDetails     |     |      Orders        |     |      Products       |
++---------------------+     +-----------------------+     +-------------------+     +--------------------+
+| UserID (PK)         |     | OrderDetailID (PK)  |     | OrderID (PK)      |     | ProductID (PK)     |
+| Username            |     | OrderID (FK)        |     | UserID (FK)       |     | ProductName         |
+| Email (UNIQUE)      |     | ProductID (FK)      |     | OrderDate          |     | Description         |
+| PasswordHash        |     | Quantity (NOT NULL) |     | TotalAmount (NOT NULL)|  | Price (NOT NULL)    |
+| DateJoined (NOT NULL)|   | PriceAtTimeOfOrder  |     | Status (NOT NULL) |     | Stock (NOT NULL)   |
+| LastLogin           |     +-----------------------+     +-------------------+     | DateAdded (NOT NULL)|
+|                     |                                                           +--------------------+
++---------------------+
