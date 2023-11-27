@@ -19,6 +19,12 @@ Scripts which illustrate how to clean data using SQL.
 - `TrimeWhiteSpace` - Removes leading and trailing white spaces from specified columns applying this operation only to entries in those columns where leading or trailing spaces are detected.
 - `UpdateValues` - Replaces a user specified value with a different user specified value.
 
+## Dynamic Templates
+Scripts designed to work across different tables without hardcoding table or variable names.
+- `DescriptiveStatistics` - Generate descriptive statistics (frequency and percent of null, range, if numeric mean, standard deviation etc) for all columns in a table.
+- `KeyFinder` - Look for possible keys based on column names across tables. If no exact matches are found, uses soundex to find approximate matches.
+- `TableProfiler` - Analyze structure of tables using metadata.
+
 ## Mock Database
 Scripts which illustrate the set-up, use, and maintence for a fake (mock) database. These scripts are organized into the following directories.
 
