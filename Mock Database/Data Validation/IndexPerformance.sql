@@ -1,0 +1,13 @@
+-- Insert a significant amount of data (example for Users table)
+INSERT INTO Users (Username, Email, PasswordHash, DateJoined)
+SELECT CONCAT('User', a.id), CONCAT('user', a.id, '@example.com'), 'hash', NOW()
+FROM 
+    (SELECT 1 + t1.id + t2.id * 10 + t3.id * 100 AS id
+     FROM 
+        (SELECT 0 AS id UNION SELECT 1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4 UNION SELECT 5 UNION SELECT 6 UNION SELECT 7 UNION SELECT 8 UNION SELECT 9) t1,
+        (SELECT 0 AS id UNION SELECT 1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4 UNION SELECT 5 UNION SELECT 6 UNION SELECT 7 UNION SELECT 8 UNION SELECT 9) t2,
+        (SELECT 0 AS id UNION SELECT 1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4 UNION SELECT 5 UNION SELECT 6 UNION SELECT 7 UNION SELECT 8 UNION SELECT 9) t3
+    ) a;
+
+-- Test the performance of a query using the index
+EXPLAIN SELECT * FROM Users WHERE Username = 'User100';
