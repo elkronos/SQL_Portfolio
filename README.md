@@ -22,6 +22,7 @@ Scripts which illustrate how to clean data using SQL.
 ## Dynamic Templates
 Scripts designed to work across different tables without hardcoding table or variable names.
 - `DescriptiveStatistics` - Generate descriptive statistics (frequency and percent of null, range, if numeric mean, standard deviation etc) for all columns in a table.
+- `FuzzyJoin` - Demonstration of `CHARINDEX` fuzzy join in SQL server. Illustrates using interim tables and saves to optimize performance.
 - `KeyFinder` - Look for possible keys based on column names across tables. If no exact matches are found, uses soundex to find approximate matches.
 - `TableProfiler` - Analyze structure of tables using metadata.
 
@@ -31,10 +32,12 @@ Scripts which illustrate the set-up, use, and maintence for a fake (mock) databa
 - `Analyze Database` - Scripts that demonstrate how to analyze the mock database. Calculate outcomes such as sales trends over time, sales proportion by product category, average purchase per user, and more.
 - `CTEs` - Common table expresion scripts; Illustrating how to delete, join, query recent orders, recursive joining, updating, analyzing records, and more.
 - `Create Database` - Scripts used to construct a mock database (see schema for database below).
+- `Data Migrations` - Script used to show how to migrate old users to new users table with adjustments.
+- `Data Validation` - Scripts designed to show how data validation can be automated.
 - `ETL` - How to stage, create, ad insert a product sales table for reproducible reporting.
 - `Feature Engineering` - How to econde, normalize, and extract features from tables for establishing pipelines.
 - `Roles` - Create and manage role and user role information.
-- `Security` - Scripts designed with security in mind. Illustrates encryption, validation, authentication, etc.
+- `Security` - Scripts designed with security in mind. Illustrates encryption, validation, authentication, hash passwords etc.
 - `Triggers` - Demonstrating how to automatically update tables based on event occurences. Includes scripts such as audit logging, email change notifications, stock management, etc.
 
 
