@@ -77,6 +77,10 @@ def update_client_list_in_redshift(client_ids, db_credentials):
                     cur.execute("INSERT INTO master_schema.client_list (client_id) VALUES (%s) ON CONFLICT (client_id) DO NOTHING;", (client_id,))
                 conn.commit()
                 logging.info(f"{len(client_ids)} client IDs processed.")
+
+                # Call the stored procedure
+                cur.callproc('create_client_schemas')
+                logging.info("Stored procedure create_client_schemas executed.")
     except psycopg2.DatabaseError as e:
         logging.error(f"Database operation failed: {e}")
 
