@@ -88,3 +88,11 @@ A schema of the mock database is listed below.
 - `DateAdded` (Datetime, Not Null)
 
 **Relationships**: Can be related to `OrderDetails` as needed.
+
+## Schemas
+Scripts which illustrate setting up schemas for multiples users in AWS Redshift.
+- `00-master_schema` - Create master table with log.
+- `01-client_schema_procedure` - Set up a schema for each client.
+- `02-grant_permissions` - Grant access to users.
+- `03-apply_schema_change` - Apply a change to schemas.
+- `RedshiftClientListUpdater` - Python functions to load client IDs.
